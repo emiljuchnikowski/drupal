@@ -76,6 +76,7 @@ RUN set -eux; \
 	chown -R www-data:www-data web/sites web/modules web/themes; \
 	rmdir /var/www/html; \
 	ln -sf /opt/drupal/web /var/www/html; \
+    cd /opt/drupal && composer require phpmailer/phpmailer; \
 	# delete composer cache
 	rm -rf "$COMPOSER_HOME"
 
